@@ -1,0 +1,23 @@
+<NotepadPlus>
+    <Project name="Grading">
+        <Folder name="Grading_system">
+            <File name="Grading_system\settings.py" />
+            <File name="Grading_system\urls.py" />
+            <File name="Grading_system\wsgi.py" />
+            <File name="Grading_system\__init__.py" />
+        </Folder>
+        <Folder name="Project">
+            <Folder name="migrations">
+                <File name="Project\migrations\__init__.py" />
+            </Folder>
+            <File name="Project\admin.py" />
+            <File name="Project\apps.py" />
+            <File name="Project\models.py" />
+            <File name="Project\tests.py" />
+            <File name="Project\views.py" />
+            <File name="Project\__init__.py" />
+        </Folder>
+        <File name="manage.py" />
+        <File name="warkplace" />
+    </Project>
+</NotepadPlus>
