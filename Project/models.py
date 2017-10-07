@@ -26,6 +26,9 @@ class student(models.Model):
 	def __str__(self):
 		return '%s, %s' % (self.Last_name, self.First_name)
 
+		
+		
+
 class Meta:
         ordering = ['Last_name']
 
@@ -64,18 +67,15 @@ class subject(models.Model):
 	Student = models.ForeignKey('student', on_delete=models.SET_NULL, null=True)
  
 	def _get_total(self):
+		super(subject, self).save(*args, **kwargs)
 		return self.quiz * .25 + self.performance * .25  + self.exam *.50
 		
 	grade = property(_get_total)
+
  
 	def __str__(self):
 		return self.subject_name
 	
 	def get_absolute_url(self):
-		return reverse('student-detail', args=[str(self.id)])
-		
-
-		
-
-
+		return reverse('subject-detail', args=[str(self.id)])
 
