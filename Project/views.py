@@ -12,9 +12,9 @@ class studentListView(generic.ListView):
 
 	def get(self, request): 
 		students = student.objects.all()
-		sub = subject.objects.exclude()
+		subs = subject.objects.exclude()
 		context = {
 			'students':students,
-			'sub ':sub ,
+			'sub ':subs ,
 		}
 		return render(request, "index.html", context)

@@ -9,6 +9,8 @@ class student(models.Model):
 	Last_name = models.CharField(max_length=100)
 	First_name = models.CharField(max_length=200, help_text="Enter your first name ")
 	MI = models.CharField(max_length=200, help_text="Enter your middle Name")
+	#subject = models.ManyToManyField("Subject", related_name="grade")
+	#subject = models.ForeignKey('subject')
 
 	Gender = (
         ('m', 'Male'),
@@ -64,18 +66,16 @@ class subject(models.Model):
 	quiz = models.IntegerField(null=True)
 	performance = models.IntegerField(null=True)
 	exam = models.IntegerField(null=True)
-	Student = models.ForeignKey('student', on_delete=models.SET_NULL, null=True)
- 
-	def _get_total(self):
-		super(subject, self).save(*args, **kwargs)
-		return self.quiz * .25 + self.performance * .25  + self.exam *.50
-		
-	grade = property(_get_total)
+	Student = models.ForeignKey('student', on_delete=models.SET_NULL, null=True,related_name="grade")
 
  
 	def __str__(self):
 		return self.subject_name
+		
+	def _get_total(self):
+		return (self.quiz * 0.25) + (self.performance * 0.25 ) + (self.exam * 0.50)
+	grade = property(_get_total)
 	
-	def get_absolute_url(self):
-		return reverse('subject-detail', args=[str(self.id)])
+	#def get_absolute_url(self):
+	#	return reverse('subject-detail', args=[str(self.id)])
 

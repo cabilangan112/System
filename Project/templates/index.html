@@ -1,28 +1,21 @@
 
 
-    <h1>Book List</h1>
-
-    {% if students %}
-    <ul>
+    <h1>Student List</h1>
 
       {% for students in students %}
       <li>
-        <a href="{ url 'student.id'}">{{students.Last_name }}</a> ({{students.First_name}} {{subject.total }})
+        <a>{{students.First_name }} {{students.MI }} {{students.Last_name }}</a>
+			<p>Course:
+			{% for course in students.course.all %}
+			{{ course }}
+			{% endfor %}</p>
+			
+			<p>Subjects:</p>
+			{% for subject in students.grade.all %}
+			 <p>{{ subject }} Grade: {{ subject.grade }}
+			{% endfor %}</p>
       </li>
       {% endfor %}
-
-    </ul>
-    {% else %}
-      <p>There are no books in the library.</p>
-    {% endif %}       
-
-
-      {% for sub in sub %}
-
-
-	{{sub.subject_name}}
-
-	      {% endfor %}
   </div>
 
 
