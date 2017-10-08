@@ -1,5 +1,5 @@
 from django.contrib import admin
-from Attendance.models import Organization, Meeting, AttendanceRecord
+from .models import Organization, Meeting, AttendanceRecord
 
 # Register your models here.
 

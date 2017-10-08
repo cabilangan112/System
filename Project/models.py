@@ -79,4 +79,28 @@ class subject(models.Model):
 	
 	def get_absolute_url(self):
 		return reverse('subject-detail', args=[str(self.id)])
+		
+		
+ATTENDANCE_TYPES = (
+    ('present', 'Present'),
+    ('unexcused', 'Unexcused'),
+    ('excused', 'Excused'),
+    ('late', 'Late'),
+)
+
+ATTENDANCE_PRONOUNS = {
+    'present': 'at',
+    'unexcused': 'from',
+    'excused': 'from',
+    'late': 'to',
+    '': '',
+}
+
+class AttendanceRecord(models.Model):
+    meeting = models.DateField(null=True, blank=True)
+    student = models.ForeignKey(student)
+    status = models.CharField("", max_length=10, choices=ATTENDANCE_TYPES)
+ 
+    def __unicode__(self):
+        return "%s %s was %s %s %s" % (self.student.Last_name,  self.status, ATTENDANCE_PRONOUNS[self.status], self.meeting)
 
