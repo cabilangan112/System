@@ -1,4 +1,4 @@
-"""Grading_system URL Configuration
+"""locallibrary URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.11/topics/http/urls/
@@ -15,13 +15,15 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from django.conf.urls import include 
+from django.conf.urls import include
+from django.views.generic import RedirectView
 from django.conf.urls.static import static
-from Project.views import studentListView
 from django.conf import settings
+
 
 urlpatterns = [
 	url(r'^admin/', admin.site.urls),
-	url(r'^students/$', studentListView.as_view(), name='student-detail'),
 	url(r'^Project/', include('Project.urls')),
+	url(r'^$', RedirectView.as_view(url='/Project/', permanent=True)),
+	url(r'^accounts/',include('django.contrib.auth.urls')),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

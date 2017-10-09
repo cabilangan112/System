@@ -1,0 +1,24 @@
+
+{% extends "base_generic.html" %}
+{% block content %}
+    <h1>Professor</h1>
+
+    {% if professors %}
+    <ul>
+
+      {% for professors in professors %}
+      <li>
+        <a href="{ url 'professors.id'}">{{ professors.first_name }}</a> ({{ professors.last_name}} )
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no professors.</p>
+    {% endif %}       
+{% endblock %}
+
+  </div>
+
+
+

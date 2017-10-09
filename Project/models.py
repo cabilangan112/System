@@ -9,7 +9,7 @@ class student(models.Model):
 	Last_name    =	 models.CharField(max_length=100)
 	First_name 	 = 	 models.CharField(max_length=200, help_text="Enter your first name ")
 	MI 			 =	 models.CharField(max_length=200, help_text="Enter your middle Name")
-	Professor    =   models.ForeignKey('professor', on_delete=models.SET_NULL, null=True)
+
 
 	Gender = (
         ('m', 'Male'),
@@ -65,6 +65,7 @@ class subject(models.Model):
 	performance	 =	    models.IntegerField(null=True)
 	exam         =      models.IntegerField(null=True)
 	Student      =      models.ForeignKey('student', on_delete=models.SET_NULL, null=True)
+	Professor    =   models.ForeignKey('professor', on_delete=models.SET_NULL, null=True)
  
 	def get_computed(self):
 		result = self.quiz * 0.25 + self.performance * 0.25 + self.exam  * 0.50 
@@ -112,3 +113,6 @@ class professor(models.Model):
 	
 	def __str__(self):
 		return self.first_name
+		
+	def get_absolute_url(self):
+		return reverse(' professor-detail', args=[str(self.id)])

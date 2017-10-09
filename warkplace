@@ -52,6 +52,9 @@
             </Folder>
             <Folder name="templates">
                 <File name="Project\templates\index.html" />
+                <File name="Project\templates\professor.html" />
+                <File name="Project\templates\professor_detail.html" />
+                <File name="Project\templates\base_generic.html" />
             </Folder>
             <File name="Project\admin.py" />
             <File name="Project\admin.pyc" />
