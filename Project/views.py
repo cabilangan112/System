@@ -12,21 +12,23 @@ class studentListView(generic.ListView):
 
 	def get(self, request): 
 		students = student.objects.all()
-		sub = subject.objects.exclude()
 		context = {
 			'students':students,
 		
 		}
-		return render(request, "index.html", context)
+		return render(request, "student_list.html", context)
 		
 		
 def index(request):
-	professors = professor.objects.all()
-	context = {
-	'professors':professors,
-	}
-	return render(request, "professor.html", context)
-	
+		queryset = subject.objects.filter(subject_name__icontains='war')[:5]
+		professors = professor.objects.all()
+		context = {
+			'professors':professors,
+		
+		}
+		return render(request, "professor.html", context)
+
+
 class ProfessorDetailView(DetailView):
 	model = professor
 	template_name = "professor_detail.html"

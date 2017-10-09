@@ -64,8 +64,8 @@ class subject(models.Model):
 	quiz		 = 		models.IntegerField(null=True)
 	performance	 =	    models.IntegerField(null=True)
 	exam         =      models.IntegerField(null=True)
-	Student      =      models.ForeignKey('student', on_delete=models.SET_NULL, null=True)
-	Professor    =   models.ForeignKey('professor', on_delete=models.SET_NULL, null=True)
+	Student      =      models.ForeignKey('student', on_delete	  =		 models.SET_NULL, null=True)
+	Professor    =      models.ForeignKey('professor', on_delete=models.SET_NULL, null=True)
  
 	def get_computed(self):
 		result = self.quiz * 0.25 + self.performance * 0.25 + self.exam  * 0.50 
@@ -111,8 +111,8 @@ class professor(models.Model):
 	last_name 		= models.CharField(max_length=150)
 	bio 			= models.TextField(max_length=300)
 	
-	def __str__(self):
-		return self.first_name
-		
 	def get_absolute_url(self):
-		return reverse(' professor-detail', args=[str(self.id)])
+		return reverse('professor-detail', args=[str(self.id)])
+
+	def __str__(self):
+		return '%s, %s' % (self.last_name, self.first_name)
