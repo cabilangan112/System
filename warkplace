@@ -1,23 +1,82 @@
 <NotepadPlus>
-    <Project name="Grading">
-        <Folder name="Grading_system">
-            <File name="Grading_system\settings.py" />
-            <File name="Grading_system\urls.py" />
-            <File name="Grading_system\wsgi.py" />
-            <File name="Grading_system\__init__.py" />
+    <Project name="jassen">
+        <Folder name="attendance">
+            <Folder name="migrations">
+                <File name="attendance\migrations\__init__.py" />
+            </Folder>
+            <File name="attendance\admin.py" />
+            <File name="attendance\apps.py" />
+            <File name="attendance\apps.pyc" />
+            <File name="attendance\models.py" />
+            <File name="attendance\tests.py" />
+            <File name="attendance\views.py" />
+            <File name="attendance\__init__.py" />
+            <File name="attendance\__init__.pyc" />
         </Folder>
         <Folder name="Project">
             <Folder name="migrations">
+                <File name="Project\migrations\0001_initial.py" />
+                <File name="Project\migrations\0001_initial.pyc" />
+                <File name="Project\migrations\0002_auto_20170930_1052.py" />
+                <File name="Project\migrations\0002_auto_20170930_1052.pyc" />
+                <File name="Project\migrations\0003_course_dep.py" />
+                <File name="Project\migrations\0003_course_dep.pyc" />
+                <File name="Project\migrations\0004_subject_grade.py" />
+                <File name="Project\migrations\0004_subject_grade.pyc" />
+                <File name="Project\migrations\0005_student_sex.py" />
+                <File name="Project\migrations\0005_student_sex.pyc" />
+                <File name="Project\migrations\0006_auto_20171004_1428.py" />
+                <File name="Project\migrations\0006_auto_20171004_1428.pyc" />
+                <File name="Project\migrations\0007_auto_20171006_1328.py" />
+                <File name="Project\migrations\0007_auto_20171006_1328.pyc" />
+                <File name="Project\migrations\0008_auto_20171006_1354.py" />
+                <File name="Project\migrations\0008_auto_20171006_1354.pyc" />
+                <File name="Project\migrations\0009_auto_20171006_1403.py" />
+                <File name="Project\migrations\0009_auto_20171006_1403.pyc" />
+                <File name="Project\migrations\0010_remove_student_subject.py" />
+                <File name="Project\migrations\0010_remove_student_subject.pyc" />
+                <File name="Project\migrations\0011_subject_student.py" />
+                <File name="Project\migrations\0011_subject_student.pyc" />
+                <File name="Project\migrations\0012_auto_20171006_1421.py" />
+                <File name="Project\migrations\0012_auto_20171006_1421.pyc" />
+                <File name="Project\migrations\0013_auto_20171006_1432.py" />
+                <File name="Project\migrations\0013_auto_20171006_1432.pyc" />
+                <File name="Project\migrations\0014_auto_20171006_1433.py" />
+                <File name="Project\migrations\0014_auto_20171006_1433.pyc" />
+                <File name="Project\migrations\0015_auto_20171008_0935.py" />
+                <File name="Project\migrations\0015_auto_20171008_0935.pyc" />
+                <File name="Project\migrations\0016_auto_20171008_0950.py" />
+                <File name="Project\migrations\0016_auto_20171008_0950.pyc" />
                 <File name="Project\migrations\__init__.py" />
+                <File name="Project\migrations\__init__.pyc" />
+            </Folder>
+            <Folder name="templates">
+                <File name="Project\templates\index.html" />
             </Folder>
             <File name="Project\admin.py" />
+            <File name="Project\admin.pyc" />
             <File name="Project\apps.py" />
+            <File name="Project\apps.pyc" />
+            <File name="Project\attendance.pyc" />
             <File name="Project\models.py" />
+            <File name="Project\models.pyc" />
             <File name="Project\tests.py" />
+            <File name="Project\urls.py" />
+            <File name="Project\urls.pyc" />
             <File name="Project\views.py" />
+            <File name="Project\views.pyc" />
             <File name="Project\__init__.py" />
+            <File name="Project\__init__.pyc" />
         </Folder>
-        <File name="manage.py" />
-        <File name="warkplace" />
+        <Folder name="Grading_system">
+            <File name="Grading_system\settings.py" />
+            <File name="Grading_system\settings.pyc" />
+            <File name="Grading_system\urls.py" />
+            <File name="Grading_system\urls.pyc" />
+            <File name="Grading_system\wsgi.py" />
+            <File name="Grading_system\wsgi.pyc" />
+            <File name="Grading_system\__init__.py" />
+            <File name="Grading_system\__init__.pyc" />
+        </Folder>
     </Project>
 </NotepadPlus>

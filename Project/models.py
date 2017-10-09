@@ -9,6 +9,7 @@ class student(models.Model):
 	Last_name    =	 models.CharField(max_length=100)
 	First_name 	 = 	 models.CharField(max_length=200, help_text="Enter your first name ")
 	MI 			 =	 models.CharField(max_length=200, help_text="Enter your middle Name")
+	Professor    =   models.ForeignKey('professor', on_delete=models.SET_NULL, null=True)
 
 	Gender = (
         ('m', 'Male'),
@@ -97,10 +98,17 @@ ATTENDANCE_PRONOUNS = {
 }
 
 class AttendanceRecord(models.Model):
-    meeting = models.DateField(null=True, blank=True)
-    student = models.ForeignKey(student)
-    status = models.CharField("", max_length=10, choices=ATTENDANCE_TYPES)
+    meeting 		= models.DateField(null=True, blank=True)
+    student	 		= models.ForeignKey(student)
+    status  		= models.CharField("", max_length=10, choices=ATTENDANCE_TYPES)
  
     def __unicode__(self):
         return "%s %s was %s %s %s" % (self.student.Last_name,  self.status, ATTENDANCE_PRONOUNS[self.status], self.meeting)
 
+class professor(models.Model):
+	first_name		= models.CharField(max_length=150)
+	last_name 		= models.CharField(max_length=150)
+	bio 			= models.TextField(max_length=300)
+	
+	def __str__(self):
+		return self.first_name

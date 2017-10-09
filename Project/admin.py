@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 from django.contrib import admin
-from .models import student,Course,subject 
+from .models import student,Course,subject , professor
 
 
 
@@ -14,9 +14,10 @@ class subjectAdmin(admin.ModelAdmin):
 
 	
 class studentAdmin(admin.ModelAdmin):
-	list_display = ('First_name', 'Last_name')
+	list_display = ('First_name', 'Last_name' )
 	inlines = [subjectInline]
 
 admin.site.register(student,studentAdmin)
 admin.site.register(Course)
 admin.site.register(subject,subjectAdmin)
+admin.site.register(professor)
