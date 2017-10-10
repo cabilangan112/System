@@ -2,7 +2,7 @@
 {% extends "base_generic.html" %}
 {% block content %}
 
-    <h1>students</h1>
+    <h1>subjects</h1>
 
     {% if subjects %}
 	
@@ -11,11 +11,11 @@
 
       
       <li>
-        <a href="{ url 'get_absolute_url'}">{{ sub.subject_name }} </a> ({{ sub.professor.first_name}})
+        <a href="{ url 'get_absolute_url'}">{{ sub.subject_name }} </a> ({{ sub.Professor}})
       </li>
-     
+         </ul>
 {% endfor %}
-    </ul>
+
     {% else %}
       <p>There are no books in the library.</p>
     {% endif %}       

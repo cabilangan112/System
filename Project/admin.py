@@ -10,7 +10,7 @@ class subjectInline(admin.TabularInline):
 	model =  subject
 
 class subjectAdmin(admin.ModelAdmin):
-	list_display = ('subject_name', 'quiz', 'performance', 'exam', 'get_computed')
+	list_display = ('subject_name', 'quiz', 'performance', 'exam', 'get_computed','Professor')
 
 	
 class studentAdmin(admin.ModelAdmin):
