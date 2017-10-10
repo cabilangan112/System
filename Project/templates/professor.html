@@ -8,7 +8,7 @@
 
       {% for professors in professors %}
       <li>
-  <a href="{ url 'professors.get_absolute_url'}"> {{ professors.subject_name }}</a> ({{ professors.first_name }},{{ professors.last_name}} )
+  <a href="{ url 'professors.get_absolute_url'}"> {{ professors.first_name }},{{ professors.last_name}} </a>
       </li>
       {% endfor %}
 

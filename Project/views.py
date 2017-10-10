@@ -20,13 +20,13 @@ class studentListView(generic.ListView):
 		
 		
 def index(request):
-		queryset = subject.objects.filter(subject_name__icontains='war')[:5]
-		subjects = subject.objects.all()
+		queryset = professor.objects.filter(last_name__icontains='war')[:5]
+		professors = professor.objects.all()
 		context = {
-			'subjects':subjects,
+			'professors':professors,
 		
 		}
-		return render(request, "index.html", context)
+		return render(request, "professor.html", context)
 
 
 class ProfessorDetailView(DetailView):
@@ -34,5 +34,5 @@ class ProfessorDetailView(DetailView):
 	template_name = "professor_detail.html"
 	
 	def get_context_data(self, **kwargs):
-		context = super(BookDetailView, self).get_context_data(**kwargs)
+		context = super(ProfessorDetailView, self).get_context_data(**kwargs)
 		return context

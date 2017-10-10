@@ -9,6 +9,7 @@ class student(models.Model):
 	Last_name    =	 models.CharField(max_length=100)
 	First_name 	 = 	 models.CharField(max_length=200, help_text="Enter your first name ")
 	MI 			 =	 models.CharField(max_length=200, help_text="Enter your middle Name")
+	
 
 
 	Gender = (
@@ -44,6 +45,7 @@ class Course(models.Model):
 	
 	course_name  	=  models.CharField(max_length=100)
 	description 	=  models.TextField(max_length=500)
+	Professor    =      models.ForeignKey('professor', on_delete=models.SET_NULL, null=True)
 	
 	
 	
@@ -64,8 +66,8 @@ class subject(models.Model):
 	quiz		 = 		models.IntegerField(null=True)
 	performance	 =	    models.IntegerField(null=True)
 	exam         =      models.IntegerField(null=True)
-	Student      =      models.ForeignKey('student', on_delete	  =		 models.SET_NULL, null=True)
-	Professor    =      models.ForeignKey('professor', on_delete=models.SET_NULL, null=True)
+	Student      =      models.ForeignKey('student', on_delete=models.SET_NULL, null=True)
+
  
 	def get_computed(self):
 		result = self.quiz * 0.25 + self.performance * 0.25 + self.exam  * 0.50 
@@ -77,7 +79,7 @@ class subject(models.Model):
 
  
 	def __str__(self):
-		return self.subject_name, self.Professor
+		return self.subject_name
 	
 	def get_absolute_url(self):
 		return reverse('subject-detail', args=[str(self.id)])
@@ -105,11 +107,15 @@ class AttendanceRecord(models.Model):
  
     def __unicode__(self):
         return "%s %s was %s %s %s" % (self.student.Last_name,  self.status, ATTENDANCE_PRONOUNS[self.status], self.meeting)
+		
+		
 
 class professor(models.Model):
 	first_name		= models.CharField(max_length=150)
 	last_name 		= models.CharField(max_length=150)
 	bio 			= models.TextField(max_length=300)
+	Student		  =   models.ManyToManyField("student", related_name="professor")
+
 	
 	def get_absolute_url(self):
 		return reverse('professor-detail', args=[str(self.id)])
