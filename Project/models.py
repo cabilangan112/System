@@ -9,6 +9,8 @@ class student(models.Model):
 	Last_name    =	 models.CharField(max_length=100)
 	First_name 	 = 	 models.CharField(max_length=200, help_text="Enter your first name ")
 	MI 			 =	 models.CharField(max_length=200, help_text="Enter your middle Name")
+
+
 	
 	Gender = (
         ('m', 'Male'),
@@ -16,7 +18,9 @@ class student(models.Model):
 	)
 	Sex			  =   models.CharField(max_length=1, choices=Gender, blank=True, default='m')
 	
-	course		  =   models.ManyToManyField("Course", related_name="student")
+	course		  =   models.ManyToManyField("Course", related_name="student") 
+	Professor	  =   models.ManyToManyField("professor", related_name="student")
+	
 
 	def get_absolute_url(self):
 		return reverse(' student-detail', args=[str(self.id)])
@@ -41,7 +45,7 @@ class Course(models.Model):
 	
 	course_name  	=  models.CharField(max_length=100)
 	description 	=  models.TextField(max_length=500)
-	Professor    =      models.ForeignKey('professor', on_delete=models.SET_NULL, null=True)
+
 	
 	
 	
@@ -62,9 +66,8 @@ class subject(models.Model):
 	quiz		 = 		models.IntegerField(null=True)
 	performance	 =	    models.IntegerField(null=True)
 	exam         =      models.IntegerField(null=True)
-	Student      =      models.ForeignKey('student', on_delete=models.SET_NULL, null=True)
 
- 
+
 	def get_computed(self):
 		result = self.quiz * 0.25 + self.performance * 0.25 + self.exam  * 0.50 
 		return result
@@ -72,8 +75,7 @@ class subject(models.Model):
 	def save(self, *args, **kwargs):
 		self.computed = self.get_computed()
 		super(subject, self).save(*args, **kwargs)
-
- 
+		
 	def __str__(self):
 		return self.subject_name
 	
@@ -110,7 +112,9 @@ class professor(models.Model):
 	first_name		= models.CharField(max_length=150)
 	last_name 		= models.CharField(max_length=150)
 	bio 			= models.TextField(max_length=300)
-	Student		    = models.ManyToManyField("student", related_name="professor")
+
+
+
 
 	
 	def get_absolute_url(self):

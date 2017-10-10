@@ -49,7 +49,7 @@ class ProfessorDetailView(DetailView):
 		
 class SubjectDetailView(DetailView):
 	model = subject
-	template_name = "professor_detail.html"
+	template_name = "subject_detail.html"
 	
 	def get_context_data(self, **kwargs):
 		context = super(SubjectDetailView, self).get_context_data(**kwargs)
