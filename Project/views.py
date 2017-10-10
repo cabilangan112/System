@@ -27,6 +27,16 @@ def index(request):
 		
 		}
 		return render(request, "professor.html", context)
+		
+class  subjectList(generic.ListView):
+	def get(self, request): 
+		queryset = subject.objects.filter(last_name__icontains='war')[:5]
+		professors = subject.objects.all()
+		context = {
+			'professors':professors,
+		
+		}
+		return render(request, "professor.html", context)
 
 
 class ProfessorDetailView(DetailView):
@@ -35,4 +45,12 @@ class ProfessorDetailView(DetailView):
 	
 	def get_context_data(self, **kwargs):
 		context = super(ProfessorDetailView, self).get_context_data(**kwargs)
+		return context
+		
+class SubjectDetailView(DetailView):
+	model = subject
+	template_name = "professor_detail.html"
+	
+	def get_context_data(self, **kwargs):
+		context = super(SubjectDetailView, self).get_context_data(**kwargs)
 		return context

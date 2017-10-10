@@ -10,8 +10,6 @@ class student(models.Model):
 	First_name 	 = 	 models.CharField(max_length=200, help_text="Enter your first name ")
 	MI 			 =	 models.CharField(max_length=200, help_text="Enter your middle Name")
 	
-
-
 	Gender = (
         ('m', 'Male'),
         ('o', 'Female'),
@@ -19,8 +17,6 @@ class student(models.Model):
 	Sex			  =   models.CharField(max_length=1, choices=Gender, blank=True, default='m')
 	
 	course		  =   models.ManyToManyField("Course", related_name="student")
-
-
 
 	def get_absolute_url(self):
 		return reverse(' student-detail', args=[str(self.id)])
@@ -114,7 +110,7 @@ class professor(models.Model):
 	first_name		= models.CharField(max_length=150)
 	last_name 		= models.CharField(max_length=150)
 	bio 			= models.TextField(max_length=300)
-	Student		  =   models.ManyToManyField("student", related_name="professor")
+	Student		    = models.ManyToManyField("student", related_name="professor")
 
 	
 	def get_absolute_url(self):
