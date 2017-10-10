@@ -9,8 +9,6 @@ class student(models.Model):
 	Last_name    =	 models.CharField(max_length=100)
 	First_name 	 = 	 models.CharField(max_length=200, help_text="Enter your first name ")
 	MI 			 =	 models.CharField(max_length=200, help_text="Enter your middle Name")
-
-
 	
 	Gender = (
         ('m', 'Male'),
@@ -18,8 +16,8 @@ class student(models.Model):
 	)
 	Sex			  =   models.CharField(max_length=1, choices=Gender, blank=True, default='m')
 	
-	course		  =   models.ManyToManyField("Course", related_name="student") 
-	Professor	  =   models.ManyToManyField("professor", related_name="student")
+	Course		  =   models.ManyToManyField("Course", related_name="student") 
+	Professor		  =   models.ManyToManyField("professor", related_name="student")
 	
 
 	def get_absolute_url(self):
@@ -28,8 +26,6 @@ class student(models.Model):
 	def __str__(self):
 		return '%s, %s' % (self.Last_name, self.First_name)
 		
-		
-
 class Meta:
         ordering = ['Last_name']
 
@@ -46,9 +42,6 @@ class Course(models.Model):
 	course_name  	=  models.CharField(max_length=100)
 	description 	=  models.TextField(max_length=500)
 
-	
-	
-	
 	def __str__(self):
 		return self.course_name
 
@@ -63,10 +56,18 @@ class Course(models.Model):
 		
 class subject(models.Model):
 	subject_name = 		models.CharField(max_length=150)
+	subject_Discreption = 		models.CharField(max_length=2)
+	
+	def __str__(self):
+		return self.subject_name
+	
+	
+		
+class Grade(models.Model):
 	quiz		 = 		models.IntegerField(null=True)
 	performance	 =	    models.IntegerField(null=True)
 	exam         =      models.IntegerField(null=True)
-
+	
 
 	def get_computed(self):
 		result = self.quiz * 0.25 + self.performance * 0.25 + self.exam  * 0.50 
@@ -81,6 +82,21 @@ class subject(models.Model):
 	
 	def get_absolute_url(self):
 		return reverse('subject-detail', args=[str(self.id)])
+		
+		
+
+class professor(models.Model):
+	Subject = models.ForeignKey('subject', on_delete=models.SET_NULL, null=True)
+	first_name		= models.CharField(max_length=150)
+	last_name 		= models.CharField(max_length=150)
+	bio 			= models.TextField(max_length=300)
+	
+	def get_absolute_url(self):
+		return reverse('professor-detail', args=[str(self.id)])
+		
+	def __str__(self):
+		return '%s, %s' % (self.last_name, self.first_name)
+		
 		
 		
 ATTENDANCE_TYPES = (
@@ -107,18 +123,3 @@ class AttendanceRecord(models.Model):
         return "%s %s was %s %s %s" % (self.student.Last_name,  self.status, ATTENDANCE_PRONOUNS[self.status], self.meeting)
 		
 		
-
-class professor(models.Model):
-	first_name		= models.CharField(max_length=150)
-	last_name 		= models.CharField(max_length=150)
-	bio 			= models.TextField(max_length=300)
-
-
-
-
-	
-	def get_absolute_url(self):
-		return reverse('professor-detail', args=[str(self.id)])
-		
-	def __str__(self):
-		return '%s, %s' % (self.last_name, self.first_name)

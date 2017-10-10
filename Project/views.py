@@ -41,6 +41,7 @@ class  subjectList(generic.ListView):
 
 class ProfessorDetailView(DetailView):
 	model = professor
+	
 	template_name = "professor_detail.html"
 	
 	def get_context_data(self, **kwargs):
