@@ -18,6 +18,7 @@ class student(models.Model):
 	
 	Course		  =   models.ManyToManyField("Course", related_name="student") 
 	Professor		  =   models.ManyToManyField("professor", related_name="student")
+	Grade		  =   models.ManyToManyField("Grade", related_name="student")
 	
 
 	def get_absolute_url(self):
@@ -41,6 +42,7 @@ class Course(models.Model):
 	
 	course_name  	=  models.CharField(max_length=100)
 	description 	=  models.TextField(max_length=500)
+	
 
 	def __str__(self):
 		return self.course_name
@@ -56,17 +58,19 @@ class Course(models.Model):
 		
 class subject(models.Model):
 	subject_name = 		models.CharField(max_length=150)
-	subject_Discreption = 		models.CharField(max_length=2)
-	
+	subject_Descreption = 		models.CharField(max_length=200)	
 	def __str__(self):
 		return self.subject_name
 	
 	
 		
 class Grade(models.Model):
+	
+	Subject = models.ForeignKey('subject', on_delete=models.SET_NULL, null=True)
 	quiz		 = 		models.IntegerField(null=True)
 	performance	 =	    models.IntegerField(null=True)
 	exam         =      models.IntegerField(null=True)
+	mark		 = 		models.CharField(max_length=150)
 	
 
 	def get_computed(self):
@@ -75,10 +79,10 @@ class Grade(models.Model):
 
 	def save(self, *args, **kwargs):
 		self.computed = self.get_computed()
-		super(subject, self).save(*args, **kwargs)
-		
+		super(Grade, self).save(*args, **kwargs)
+	
 	def __str__(self):
-		return self.subject_name
+		return self.mark
 	
 	def get_absolute_url(self):
 		return reverse('subject-detail', args=[str(self.id)])
@@ -90,6 +94,7 @@ class professor(models.Model):
 	first_name		= models.CharField(max_length=150)
 	last_name 		= models.CharField(max_length=150)
 	bio 			= models.TextField(max_length=300)
+	Subject = models.ForeignKey('subject', on_delete=models.SET_NULL, null=True)
 	
 	def get_absolute_url(self):
 		return reverse('professor-detail', args=[str(self.id)])
