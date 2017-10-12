@@ -11,7 +11,11 @@
 <li><strong>Performance :	</strong>  			{{student.grade.performance}}  </li>
 <li><strong>Exam :	</strong>				{{student.grade.exam}}  </li>
 <li><strong>Grade :	</strong> 				{{student.grade.get_computed}}   </li>
-<li><strong>Mark :	</strong>				{{student.grade.mark}}  </li>
+<li><strong>Mark :	</strong>				{{student.grade.Mark}}  </li>
 
 
 {% endblock%}
+
+    <hr>
+    <p class="{% if student.grade.Mark.mark == 'Pass' %}text-success{% elif student.grade.Mark.mark  == 'Fail' %}text-danger{% else %}text-warning{% endif %}"></p>
+

@@ -29,7 +29,7 @@ class student(models.Model):
 		return '%s, %s' % (self.Last_name, self.First_name)
 		
 class Meta:
-        ordering = ['Last_name']
+        ordering = ['Course']
 
 class Course(models.Model):
 	Department = (
@@ -76,7 +76,12 @@ class Grade(models.Model):
 	quiz		 = 		models.IntegerField(null=True)
 	performance	 =	    models.IntegerField(null=True)
 	exam         =      models.IntegerField(null=True)
-	mark		 = 		models.CharField(max_length=150)
+	mark = (
+			('f', 'Fail'),
+			('p', 'Pass'),
+
+	)
+	Mark = models.CharField(max_length=1, choices=mark, blank=True, default='Fail')
 	
 
 	def get_computed(self):
@@ -88,7 +93,7 @@ class Grade(models.Model):
 		super(Grade, self).save(*args, **kwargs)
 	
 	def __str__(self):
-		return self.mark
+		return self.Mark
 	
 	def get_absolute_url(self):
 		return reverse('subject-detail', args=[str(self.id)])
