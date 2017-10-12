@@ -57,7 +57,7 @@ class Course(models.Model):
 		super(Course, self).save(*args, **kwargs)
 		
 class subject(models.Model):
- 	Professor		 = 		models.ForeignKey('professor', on_delete=models.SET_NULL, null=True)
+
 	subject_name		 = 		models.CharField(max_length=150)
 	subject_Descreption  = 	 	models.CharField(max_length=200)	
 	
@@ -68,8 +68,6 @@ class subject(models.Model):
 	
 		
 class Grade(models.Model):
- 	Student		 = 		models.ForeignKey('student', on_delete=models.SET_NULL, null=True)
-	Subject 	 = 		models.ForeignKey('subject', on_delete=models.SET_NULL, null=True)
 	quiz		 = 		models.IntegerField(null=True)
 	performance	 =	    models.IntegerField(null=True)
 	exam         =      models.IntegerField(null=True)
@@ -97,6 +95,9 @@ class professor(models.Model):
 	first_name		= models.CharField(max_length=150)
 	last_name 		= models.CharField(max_length=150)
 	bio 			= models.TextField(max_length=300)
+	Student	    = models.ForeignKey('student', on_delete=models.SET_NULL, null=True)
+	Subject		 = 		models.ForeignKey('subject', on_delete=models.SET_NULL, null=True)
+	grade	 = 		models.ForeignKey('Grade', on_delete=models.SET_NULL, null=True)
 
 	
 	def get_absolute_url(self):

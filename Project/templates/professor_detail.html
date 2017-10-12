@@ -3,18 +3,17 @@
 {% block content %}
   
 <h1> {{professor.last_name }} </h1>
-<h1> {{professor.Students  }} </h1>
+<h1> {{professor.Subject}} </h1>
+<br></br>
+<li> {{professor.Student}}   </p></li>
 
-	
-<div style="margin-left:20px;margin-top:20px">
-		<p>Students</p>
-        <a href="{{ books.get_absolute_url }}">{{ book.title }}</a>
-		<p>{{ book.summary }}</p>
-  
+<li><strong>Quiz :	</strong><span></span>	{{professor.grade.quiz}} </li>
+<li><strong>Performance :	</strong>  			{{professor.grade.performance}}  </li>
+<li><strong>Exam :	</strong>				{{professor.grade.exam}}  </li>
+<li><strong>Grade :	</strong> 				{{professor.grade.get_computed}}   </li>
+<li><strong>Mark :	</strong>				{{professor.grade.mark}}  </li>
 
-		
-  </div>
-{% endblock %}
 
+{% endblock%}
 
 
