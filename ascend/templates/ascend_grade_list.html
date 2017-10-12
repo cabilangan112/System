@@ -1,0 +1,24 @@
+
+{% extends "base_generic.html" %}
+{% block content %}
+    <h1>Professor</h1>
+
+    {% if grades %}
+    <ul>
+
+      {% for grades in grades %}
+      <li>
+  <a href="{{ grades.get_absolute_url }}  "> {{ grades.Subject.Professor}},{{ 
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no professors.</p>
+    {% endif %}       
+{% endblock %}
+
+  </div>
+
+
+

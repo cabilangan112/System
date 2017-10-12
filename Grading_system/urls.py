@@ -25,5 +25,7 @@ urlpatterns = [
 	url(r'^admin/', admin.site.urls),
 	url(r'^Project/', include('Project.urls')),
 	url(r'^$', RedirectView.as_view(url='/Project/', permanent=True)),
+	url(r'^cba/', include('cba.urls')),
+	url(r'^ascend/', include('ascend.urls')),
 	url(r'^accounts/',include('django.contrib.auth.urls')),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

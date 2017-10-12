@@ -55,6 +55,10 @@
                 <File name="Project\templates\professor.html" />
                 <File name="Project\templates\professor_detail.html" />
                 <File name="Project\templates\base_generic.html" />
+                <File name="Project\templates\grade_list.html" />
+                <File name="Project\templates\grade_detail.html" />
+                <File name="Project\templates\student_list.html" />
+                <File name="Project\templates\student_detail.html" />
             </Folder>
             <File name="Project\admin.py" />
             <File name="Project\admin.pyc" />
