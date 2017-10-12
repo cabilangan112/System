@@ -1,4 +1,6 @@
 
+{% extends "base_generic.html" %}
+{% block content %}
 
     <h1>students</h1>
 
@@ -7,7 +9,7 @@
 
       {% for students in students %}
       <li>
-        <a href="{ url 'student.id'}">{{students.Last_name }}</a> ({{students.First_name}} {{subject.total }})
+        <a href="{{ students.get_absolute_url }} ">{{students.Last_name }} {{students.First_name}} </a> 
       </li>
       {% endfor %}
 
@@ -23,5 +25,6 @@
 	{{sub.subject_name}}
 
 	      {% endfor %}
+		  {% endblock %}
   </div>
 

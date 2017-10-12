@@ -17,6 +17,7 @@ class student(models.Model):
 	Sex			  =   models.CharField(max_length=1, choices=Gender, blank=True, default='m')
 	
 	Course		  =   models.ManyToManyField("Course", related_name="student") 
+	grade	     = 		models.ForeignKey('Grade', on_delete=models.SET_NULL, null=True)
 	
 
 	
@@ -60,6 +61,7 @@ class subject(models.Model):
 
 	subject_name		 = 		models.CharField(max_length=150)
 	subject_Descreption  = 	 	models.CharField(max_length=200)	
+	Professor		 = 		models.ForeignKey('professor', on_delete=models.SET_NULL, null=True)
 	
 
 	def __str__(self):
@@ -68,6 +70,9 @@ class subject(models.Model):
 	
 		
 class Grade(models.Model):
+	
+	Subject		 = 	 	models.ForeignKey('subject', on_delete=models.SET_NULL, null=True)
+	
 	quiz		 = 		models.IntegerField(null=True)
 	performance	 =	    models.IntegerField(null=True)
 	exam         =      models.IntegerField(null=True)
@@ -95,10 +100,6 @@ class professor(models.Model):
 	first_name		= models.CharField(max_length=150)
 	last_name 		= models.CharField(max_length=150)
 	bio 			= models.TextField(max_length=300)
-	Student	    = models.ForeignKey('student', on_delete=models.SET_NULL, null=True)
-	Subject		 = 		models.ForeignKey('subject', on_delete=models.SET_NULL, null=True)
-	grade	 = 		models.ForeignKey('Grade', on_delete=models.SET_NULL, null=True)
-
 	
 	def get_absolute_url(self):
 		return reverse('professor-detail', args=[str(self.id)])

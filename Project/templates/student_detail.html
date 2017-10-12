@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  
+<h1> {{student.Last_name }} </h1>
+<h1> {{student.grade.Subject}} </h1>
+<br></br>
+<li> {{student.grade.Subject.Professor}}   </p></li>
+
+<li><strong>Quiz :	</strong><span></span>	{{student.grade.quiz}} </li>
+<li><strong>Performance :	</strong>  			{{student.grade.performance}}  </li>
+<li><strong>Exam :	</strong>				{{student.grade.exam}}  </li>
+<li><strong>Grade :	</strong> 				{{student.grade.get_computed}}   </li>
+<li><strong>Mark :	</strong>				{{student.grade.mark}}  </li>
+
+
+{% endblock%}
