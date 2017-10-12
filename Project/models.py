@@ -17,8 +17,8 @@ class student(models.Model):
 	Sex			  =   models.CharField(max_length=1, choices=Gender, blank=True, default='m')
 	
 	Course		  =   models.ManyToManyField("Course", related_name="student") 
-	Professor		  =   models.ManyToManyField("professor", related_name="student")
-	Grade		  =   models.ManyToManyField("Grade", related_name="student")
+	
+
 	
 
 	def get_absolute_url(self):
@@ -57,16 +57,19 @@ class Course(models.Model):
 		super(Course, self).save(*args, **kwargs)
 		
 class subject(models.Model):
-	subject_name = 		models.CharField(max_length=150)
-	subject_Descreption = 		models.CharField(max_length=200)	
+
+	subject_name		 = 		models.CharField(max_length=150)
+	subject_Descreption  = 	 	models.CharField(max_length=200)	
+	
+
 	def __str__(self):
 		return self.subject_name
 	
 	
 		
 class Grade(models.Model):
-	
-	Subject = models.ForeignKey('subject', on_delete=models.SET_NULL, null=True)
+ 	Student		 = 		models.ForeignKey('student', on_delete=models.SET_NULL, null=True)
+	Subject 	 = 		models.ForeignKey('subject', on_delete=models.SET_NULL, null=True)
 	quiz		 = 		models.IntegerField(null=True)
 	performance	 =	    models.IntegerField(null=True)
 	exam         =      models.IntegerField(null=True)
@@ -90,11 +93,11 @@ class Grade(models.Model):
 		
 
 class professor(models.Model):
-	Subject = models.ForeignKey('subject', on_delete=models.SET_NULL, null=True)
+
 	first_name		= models.CharField(max_length=150)
 	last_name 		= models.CharField(max_length=150)
 	bio 			= models.TextField(max_length=300)
-	Subject = models.ForeignKey('subject', on_delete=models.SET_NULL, null=True)
+
 	
 	def get_absolute_url(self):
 		return reverse('professor-detail', args=[str(self.id)])
