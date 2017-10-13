@@ -15,11 +15,10 @@ class student(models.Model):
         ('o', 'Female'),
 	)
 	Sex			  =   models.CharField(max_length=1, choices=Gender, blank=True, default='m')
+	Professor		 = 		models.ForeignKey('professor', on_delete=models.SET_NULL, null=True)
 	
 	Course		  =   models.ManyToManyField("Course", related_name="student") 
 	grade	     = 		models.ForeignKey('Grade', on_delete=models.SET_NULL, null=True)
-	
-
 	
 
 	def get_absolute_url(self):

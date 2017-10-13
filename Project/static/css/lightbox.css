@@ -1,0 +1,33 @@
+/*Lightbox*/
+
+
+.lightb img{
+width:100%;
+height:100%;
+}
+
+.modal-body img{
+width:100%;
+}
+
+.modal-dialog{
+    position: relative;
+<<<<<<< HEAD
+    display: table; //This is important 
+=======
+    display: table;
+>>>>>>> 85b8313839abee1765b5f140132ce611754f01f1
+    overflow-y: auto;    
+    overflow-x: auto;
+    width: auto;
+    min-width: 200px;   
+}
+
+
+.galtil{
+    font-size: 100px;
+    font-size: 6vw;
+}
+
+
+
