@@ -12,3 +12,7 @@ class StudentForm(forms.ModelForm):
 		'course',
 		'grade',
 		]
+		
+		
+		
+ 

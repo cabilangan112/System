@@ -12,11 +12,7 @@ width:100%;
 
 .modal-dialog{
     position: relative;
-<<<<<<< HEAD
     display: table; //This is important 
-=======
-    display: table;
->>>>>>> 85b8313839abee1765b5f140132ce611754f01f1
     overflow-y: auto;    
     overflow-x: auto;
     width: auto;
@@ -24,10 +20,6 @@ width:100%;
 }
 
 
-.galtil{
-    font-size: 100px;
-    font-size: 6vw;
-}
 
 
 

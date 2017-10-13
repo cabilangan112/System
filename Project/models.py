@@ -29,7 +29,7 @@ class student(models.Model):
 		return '%s, %s' % (self.Last_name, self.First_name)
 		
 class Meta:
-        ordering = ['course']
+        sort = ['Professor']
 
 class Course(models.Model):
 	Department = (

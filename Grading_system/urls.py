@@ -28,4 +28,5 @@ urlpatterns = [
 	url(r'^cba/', include('cba.urls')),
 	url(r'^ascend/', include('ascend.urls')),
 	url(r'^accounts/',include('django.contrib.auth.urls')),
+	url(r'^catalog/', include('catalog.urls')),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

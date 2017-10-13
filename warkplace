@@ -59,6 +59,8 @@
                 <File name="Project\templates\grade_detail.html" />
                 <File name="Project\templates\student_list.html" />
                 <File name="Project\templates\student_detail.html" />
+                <File name="Project\templates\student-form.html" />
+                <File name="Project\templates\student-view.html" />
             </Folder>
             <File name="Project\admin.py" />
             <File name="Project\admin.pyc" />
@@ -74,6 +76,7 @@
             <File name="Project\views.pyc" />
             <File name="Project\__init__.py" />
             <File name="Project\__init__.pyc" />
+            <File name="Project\forms.py" />
         </Folder>
         <Folder name="Grading_system">
             <File name="Grading_system\settings.py" />
@@ -96,6 +99,16 @@
             <File name="cba\views.py" />
             <File name="cba\__init__.py" />
             <File name="cba\urls.py" />
+            <Folder name="templates">
+                <File name="cba\templates\cba_grade_detail.html" />
+                <File name="cba\templates\cba_grade_list.html" />
+                <File name="cba\templates\cba_index.html" />
+                <File name="cba\templates\cba_professor.html" />
+                <File name="cba\templates\cba_professor_detail.html" />
+                <File name="cba\templates\cba_student_detail.html" />
+                <File name="cba\templates\cba_student_list.html" />
+                <File name="cba\templates\sub.html" />
+            </Folder>
         </Folder>
         <Folder name="ascend">
             <Folder name="migrations">
@@ -108,6 +121,128 @@
             <File name="ascend\views.py" />
             <File name="ascend\__init__.py" />
             <File name="ascend\urls.py" />
+            <File name="ascend\templates\sub.html" />
+            <Folder name="templates">
+                <File name="ascend\templates\ascend_grade_detail.html" />
+                <File name="ascend\templates\ascend_grade_list.html" />
+                <File name="ascend\templates\ascend_index.html" />
+                <File name="ascend\templates\ascend_professor.html" />
+                <File name="ascend\templates\ascend_professor_detail.html" />
+                <File name="ascend\templates\ascend_student_detail.html" />
+                <File name="ascend\templates\ascend_student_list.html" />
+                <File name="ascend\templates\sub.html" />
+            </Folder>
+        </Folder>
+        <Folder name="library">
+            <Folder name="migrations">
+                <File name="catalog\migrations\0001_initial.py" />
+                <File name="catalog\migrations\0001_initial.pyc" />
+                <File name="catalog\migrations\0002_auto_20170927_0920.py" />
+                <File name="catalog\migrations\0002_auto_20170927_0920.pyc" />
+                <File name="catalog\migrations\0003_genre_type.py" />
+                <File name="catalog\migrations\0003_genre_type.pyc" />
+                <File name="catalog\migrations\0004_auto_20170927_0936.py" />
+                <File name="catalog\migrations\0004_auto_20170927_0936.pyc" />
+                <File name="catalog\migrations\0005_auto_20170927_0946.py" />
+                <File name="catalog\migrations\0005_auto_20170927_0946.pyc" />
+                <File name="catalog\migrations\0006_auto_20170927_1349.py" />
+                <File name="catalog\migrations\0006_auto_20170927_1349.pyc" />
+                <File name="catalog\migrations\0007_bookinstance_borrower.py" />
+                <File name="catalog\migrations\0007_bookinstance_borrower.pyc" />
+                <File name="catalog\migrations\0008_auto_20171003_1453.py" />
+                <File name="catalog\migrations\0008_auto_20171003_1453.pyc" />
+                <File name="catalog\migrations\__init__.py" />
+                <File name="catalog\migrations\__init__.pyc" />
+            </Folder>
+            <Folder name="static">
+                <Folder name="css">
+                    <File name="catalog\static\css\bootstrap.css" />
+                    <File name="catalog\static\css\font-awesome.min.css" />
+                    <File name="catalog\static\css\jquery-ui.css" />
+                    <File name="catalog\static\css\main.css" />
+                    <File name="catalog\static\css\normalize.css" />
+                    <File name="catalog\static\css\picto-foundry-food.css" />
+                    <File name="catalog\static\css\style-portfolio.css" />
+                    <File name="catalog\static\css\styles.css" />
+                </Folder>
+                <Folder name="fonts">
+                    <File name="catalog\static\fonts\fontawesome-webfont.eot" />
+                    <File name="catalog\static\fonts\fontawesome-webfont.svg" />
+                    <File name="catalog\static\fonts\fontawesome-webfont.ttf" />
+                    <File name="catalog\static\fonts\fontawesome-webfont.woff" />
+                    <File name="catalog\static\fonts\fontawesome-webfont.woff2" />
+                    <File name="catalog\static\fonts\FontAwesome.otf" />
+                    <File name="catalog\static\fonts\icomoonacfe.eot" />
+                    <File name="catalog\static\fonts\icomoonacfe.svg" />
+                    <File name="catalog\static\fonts\icomoonacfe.ttf" />
+                    <File name="catalog\static\fonts\icomoonacfe.woff" />
+                    <File name="catalog\static\fonts\icomoond41d.eot" />
+                    <File name="catalog\static\fonts\picto-foundry-food.eot" />
+                    <File name="catalog\static\fonts\picto-foundry-food.svg" />
+                    <File name="catalog\static\fonts\picto-foundry-food.ttf" />
+                    <File name="catalog\static\fonts\picto-foundry-food.woff" />
+                </Folder>
+                <Folder name="images">
+                    <File name="catalog\static\images\bagel.jpg" />
+                    <File name="catalog\static\images\beer.jpg" />
+                    <File name="catalog\static\images\beer_spec.jpg" />
+                    <File name="catalog\static\images\bread.jpg" />
+                    <File name="catalog\static\images\bread1.jpg" />
+                    <File name="catalog\static\images\bread2.jpg" />
+                    <File name="catalog\static\images\breakfast.jpg" />
+                    <File name="catalog\static\images\corn.jpg" />
+                    <File name="catalog\static\images\featured.jpg" />
+                    <File name="catalog\static\images\food_icon01.jpg" />
+                    <File name="catalog\static\images\food_icon02.jpg" />
+                    <File name="catalog\static\images\food_icon03.jpg" />
+                    <File name="catalog\static\images\food_icon04.jpg" />
+                    <File name="catalog\static\images\food_icon05.jpg" />
+                    <File name="catalog\static\images\food_icon06.jpg" />
+                    <File name="catalog\static\images\food_icon07.jpg" />
+                    <File name="catalog\static\images\food_icon08.jpg" />
+                    <File name="catalog\static\images\kabob.jpg" />
+                    <File name="catalog\static\images\limes.jpg" />
+                    <File name="catalog\static\images\pricing.jpg" />
+                    <File name="catalog\static\images\radish.jpg" />
+                    <File name="catalog\static\images\reservation-seat.jpg" />
+                    <File name="catalog\static\images\seeds.jpg" />
+                    <File name="catalog\static\images\slider1.jpg" />
+                    <File name="catalog\static\images\slider2.jpg" />
+                    <File name="catalog\static\images\slider3.JPG" />
+                    <File name="catalog\static\images\steak.jpg" />
+                </Folder>
+                <Folder name="js">
+                    <File name="catalog\static\js\bootstrap.min.js" />
+                    <File name="catalog\static\js\jquery-1.10.2.js" />
+                    <File name="catalog\static\js\jquery-1.10.2.min.js" />
+                    <File name="catalog\static\js\jquery.mixitup.min.js" />
+                    <File name="catalog\static\js\main.js" />
+                </Folder>
+            </Folder>
+            <Folder name="templates">
+                <File name="catalog\templates\author_detail.html" />
+                <File name="catalog\templates\author_list.html" />
+                <File name="catalog\templates\base_generic.html" />
+                <File name="catalog\templates\bookinstance_list_borrowed_user.html" />
+                <File name="catalog\templates\book_detail.html" />
+                <File name="catalog\templates\book_list.html" />
+                <File name="catalog\templates\index.html" />
+                <File name="catalog\templates\myborrowed_list.html" />
+                <File name="catalog\templates\student.html" />
+            </Folder>
+            <File name="catalog\admin.py" />
+            <File name="catalog\admin.pyc" />
+            <File name="catalog\apps.py" />
+            <File name="catalog\apps.pyc" />
+            <File name="catalog\models.py" />
+            <File name="catalog\models.pyc" />
+            <File name="catalog\tests.py" />
+            <File name="catalog\urls.py" />
+            <File name="catalog\urls.pyc" />
+            <File name="catalog\views.py" />
+            <File name="catalog\views.pyc" />
+            <File name="catalog\__init__.py" />
+            <File name="catalog\__init__.pyc" />
         </Folder>
     </Project>
 </NotepadPlus>

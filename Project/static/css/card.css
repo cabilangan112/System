@@ -8,21 +8,6 @@
 #font h4,p{
 	font-size: 10px;
 }
-<<<<<<< HEAD
-=======
-.card responsive{
-    float: right;
-    border: 1px dotted black;
-    margin: 0px 0px 15px 20px;
-    width: 100%;
-    height: auto;
-	margin-left:10px;
-	position: relative;
-	display: table;
-	overflow-x:auto;
-	overflow-y:auto;
-    min-width:100px;	
->>>>>>> 85b8313839abee1765b5f140132ce611754f01f1
 
 .card responsive{
     float: right;
@@ -60,13 +45,3 @@
 	background:#008000;
 	}
 
-<<<<<<< HEAD
-=======
-}
-.h1{
-
-	position: relative;
-	font:10px;
-		overflow-y:auto;
-	}
->>>>>>> 85b8313839abee1765b5f140132ce611754f01f1
