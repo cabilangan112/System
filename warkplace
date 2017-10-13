@@ -85,5 +85,29 @@
             <File name="Grading_system\__init__.py" />
             <File name="Grading_system\__init__.pyc" />
         </Folder>
+        <Folder name="cba">
+            <Folder name="migrations">
+                <File name="cba\migrations\__init__.py" />
+            </Folder>
+            <File name="cba\admin.py" />
+            <File name="cba\apps.py" />
+            <File name="cba\models.py" />
+            <File name="cba\tests.py" />
+            <File name="cba\views.py" />
+            <File name="cba\__init__.py" />
+            <File name="cba\urls.py" />
+        </Folder>
+        <Folder name="ascend">
+            <Folder name="migrations">
+                <File name="ascend\migrations\__init__.py" />
+            </Folder>
+            <File name="ascend\admin.py" />
+            <File name="ascend\apps.py" />
+            <File name="ascend\models.py" />
+            <File name="ascend\tests.py" />
+            <File name="ascend\views.py" />
+            <File name="ascend\__init__.py" />
+            <File name="ascend\urls.py" />
+        </Folder>
     </Project>
 </NotepadPlus>
