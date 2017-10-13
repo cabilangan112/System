@@ -9,7 +9,9 @@
 
       {% for students in students %}
       <li>
-        <a href="{{ students.get_absolute_url }} ">{{students.Last_name }} {{students.First_name}} </a> 
+	     
+	  
+        <a href="{{ students.get_absolute_url }} ">{{students.Last_name}}    </a> {{students.First_name}}({{students.grade.Subject.subject_name}},  {{students.Professor}})
       </li>
       {% endfor %}
 
@@ -24,7 +26,7 @@
 
 	{{sub.subject_name}}
 
-{% endfor %}
+	      {% endfor %}
 		  {% endblock %}
   </div>
 

@@ -6,7 +6,6 @@ from django.db import models
 
 
 class student(models.Model):
-	Subject		 = 	 models.ForeignKey('subject', on_delete=models.SET_NULL, null=True)
 	Last_name    =	 models.CharField(max_length=100)
 	First_name 	 = 	 models.CharField(max_length=200, help_text="Enter your first name ")
 	MI 			 =	 models.CharField(max_length=200, help_text="Enter your middle Name")
@@ -17,8 +16,7 @@ class student(models.Model):
 	)
 	Sex			  =   models.CharField(max_length=1, choices=Gender, blank=True, default='m')
 	Professor		 = 		models.ForeignKey('professor', on_delete=models.SET_NULL, null=True)
-	
-	Course		  =   models.ManyToManyField("Course", related_name="student") 
+	course	     = 		models.ForeignKey('Course', on_delete=models.SET_NULL, null=True) 
 	grade	     = 		models.ForeignKey('Grade', on_delete=models.SET_NULL, null=True)
 	
 
@@ -31,7 +29,7 @@ class student(models.Model):
 		return '%s, %s' % (self.Last_name, self.First_name)
 		
 class Meta:
-        ordering = ['Course']
+        ordering = ['course']
 
 class Course(models.Model):
 	Department = (
@@ -72,9 +70,7 @@ class subject(models.Model):
 	
 		
 class Grade(models.Model):
-	
 	Subject		 = 	 	models.ForeignKey('subject', on_delete=models.SET_NULL, null=True)
-	
 	quiz		 = 		models.IntegerField(null=True)
 	performance	 =	    models.IntegerField(null=True)
 	exam         =      models.IntegerField(null=True)

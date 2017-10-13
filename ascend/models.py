@@ -17,7 +17,7 @@ class student(models.Model):
 	Sex			  =   models.CharField(max_length=1, choices=Gender, blank=True, default='m')
 	Professor		 = 		models.ForeignKey('professor', on_delete=models.SET_NULL, null=True)
 	
-	Course		  =   models.ManyToManyField("Course", related_name="student") 
+	course	     = 		models.ForeignKey('Course', on_delete=models.SET_NULL, null=True)
 	grade	     = 		models.ForeignKey('Grade', on_delete=models.SET_NULL, null=True)
 	
 

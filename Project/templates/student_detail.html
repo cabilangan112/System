@@ -2,10 +2,11 @@
 
 {% block content %}
   
-<h1> {{student.Last_name }} </h1>
-<h1> {{student.grade.Subject}} </h1>
+<h1> Student:<strong>{{student.Last_name }} {{student.First_name}}<strong></h1>
+<h1>Subject : {{student.grade.Subject}} </h1>
 <br></br>
-<li> {{student.grade.Subject.Professor}}   </p></li>
+<p style="font-color:red;"><strong> {{student.Professor}} </strong>  </p>
+
 
 <li><strong>Quiz :	</strong><span></span>	{{student.grade.quiz}} </li>
 <li><strong>Performance :	</strong>  			{{student.grade.performance}}  </li>

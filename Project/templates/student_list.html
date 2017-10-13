@@ -11,7 +11,7 @@
       <li>
 	     
 	  
-        <a href="{{ students.get_absolute_url }} ">{{students.Last_name}}  </a> ({{students.Subject.subject_name}},  {{students.Professor}})
+        <a href="{{ students.get_absolute_url }} ">{{students.Last_name}} {{students.First_name}} {{students.course}} </a> ({{students.Subject.subject_name}},  {{students.Professor}})<br></br>
       </li>
       {% endfor %}
 
