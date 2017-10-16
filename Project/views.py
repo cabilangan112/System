@@ -10,15 +10,16 @@ from .models import student, subject, professor
 # Create your views here.
 
 
-		
+
 def index(request):
-		queryset = student.objects.filter(Last_name__icontains='war')[:5]
+		queryset = student.objects.filter(Last_name__icontains='cabilangan')[:5]
 		students = student.objects.all()
 		context = {
 			'students':students,
 		
 		}
 		return render(request, "student_list.html", context)
+		
 		
 class Student(View):
 	def get(self, request):

@@ -219,17 +219,6 @@
                     <File name="catalog\static\js\main.js" />
                 </Folder>
             </Folder>
-            <Folder name="templates">
-                <File name="catalog\templates\author_detail.html" />
-                <File name="catalog\templates\author_list.html" />
-                <File name="catalog\templates\base_generic.html" />
-                <File name="catalog\templates\bookinstance_list_borrowed_user.html" />
-                <File name="catalog\templates\book_detail.html" />
-                <File name="catalog\templates\book_list.html" />
-                <File name="catalog\templates\index.html" />
-                <File name="catalog\templates\myborrowed_list.html" />
-                <File name="catalog\templates\student.html" />
-            </Folder>
             <File name="catalog\admin.py" />
             <File name="catalog\admin.pyc" />
             <File name="catalog\apps.py" />
@@ -243,6 +232,17 @@
             <File name="catalog\views.pyc" />
             <File name="catalog\__init__.py" />
             <File name="catalog\__init__.pyc" />
+            <Folder name="template">
+                <File name="catalog\templates\base1_generic.html" />
+                <File name="catalog\templates\book.html" />
+                <File name="catalog\templates\lib_author_detail.html" />
+                <File name="catalog\templates\lib_author_list.html" />
+                <File name="catalog\templates\lib_bookinstance_list_borrowed_user.html" />
+                <File name="catalog\templates\lib_book_detail.html" />
+                <File name="catalog\templates\lib_book_list.html" />
+                <File name="catalog\templates\lib_myborrowed_list.html" />
+                <File name="catalog\templates\student.html" />
+            </Folder>
         </Folder>
     </Project>
 </NotepadPlus>

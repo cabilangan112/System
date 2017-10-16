@@ -22,3 +22,5 @@ admin.site.register(Course)
 admin.site.register(subject)
 admin.site.register(professor)
 admin.site.register(Grade,GradeAdmin)
+#admin.site.register(AttendanceRecord)
+
