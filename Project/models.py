@@ -76,11 +76,21 @@ class professor(models.Model):
 	def save(self, *args, **kwargs):
 		super(professor, self).save(*args, **kwargs)
 		
+		
+		
 class subject(models.Model):
 	subject_name = models.CharField(max_length=150)
-	quiz = models.IntegerField(null=True)
-	performance = models.IntegerField(null=True)
-	exam = models.IntegerField(null=True)
+	quiz_1 = models.IntegerField("Trinal Quiz",null=True)
+	performance_1 = models.IntegerField("Trinal Performance",null=True)
+	exam_1 = models.IntegerField("Trinal Exam",null=True)
+	
+	quiz_2 = models.IntegerField("Midterm Quiz",null=True)
+	performance_2 = models.IntegerField("Midterm Performance",null=True)
+	exam_2 = models.IntegerField("Midterm Exam",null=True)
+	
+	quiz_3 = models.IntegerField("Final Quiz",null=True)
+	performance_3 = models.IntegerField("Final Performance",null=True)
+	exam_3 = models.IntegerField("Final Exam",null=True)
 	
 	Student = models.ForeignKey('student', on_delete=models.SET_NULL, null=True,related_name="grade")
 	Professor = models.ForeignKey('professor', on_delete=models.SET_NULL, null=True,related_name="prof_subject")
@@ -88,10 +98,25 @@ class subject(models.Model):
 	def __str__(self):
 		return self.subject_name
 		
-	def _get_total(self):
+	def _get_total_1(self):
 		#quiz=25% performance=25% exam=50%
-		return (self.quiz * 0.25) + (self.performance * 0.25 ) + (self.exam * 0.50)
-	grade = property(_get_total)
+		return (self.quiz_1 * 0.25) + (self.performance_1 * 0.25 ) + (self.exam_1 * 0.50)
+	grade_1 = property(_get_total_1)
+	
+	def _get_total_2(self):
+		#quiz=25% performance=25% exam=50%
+		return (self.quiz_2 * 0.25) + (self.performance_2 * 0.25 ) + (self.exam_2 * 0.50)
+	grade_2 = property(_get_total_2)
+	
+	def _get_total_3(self):
+		#quiz=25% performance=25% exam=50%
+		return (self.quiz_3 * 0.25) + (self.performance_3 * 0.25 ) + (self.exam_3 * 0.50)
+	grade_3 = property(_get_total_3)
+	
+	def save(self, *args, **kwargs):
+		super(subject, self).save(*args, **kwargs)
+	
+	
 	
 	#def get_absolute_url(self):
 	#	return reverse('subject-detail', args=[str(self.id)])

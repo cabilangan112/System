@@ -1,7 +1,7 @@
 
 
     <h1>Student List</h1>
-
+<div>
       {% for students in students %}
       <li>
         <a>{{students.First_name }} {{students.Middle_name }} {{students.Last_name }}</a>
@@ -12,7 +12,10 @@
 			
 			<p>Subjects:</p>
 			{% for subject in students.grade.all %}
-			 <p>{{ subject }} Grade: {{ subject.grade }} Professor: {{subject.Professor}}
+			 <p>{{ subject }} Trinal Grade: {{ subject.grade_1 }} </p>
+							  <p>-------Midterm Grade: {{ subject.grade_2 }} </p>
+							  <p>-------Finals Grade: {{ subject.grade_3 }}</p>
+							  <p>-------Professor: {{subject.Professor}}</p>
 			{% endfor %}</p>
       </li>
       {% endfor %}

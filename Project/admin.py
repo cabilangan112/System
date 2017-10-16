@@ -10,7 +10,8 @@ class subjectInline(admin.TabularInline):
 	model =  subject
 
 class subjectAdmin(admin.ModelAdmin):
-	list_display = ('subject_name', 'quiz', 'performance', 'exam', 'grade')
+	list_display = ('subject_name', 'quiz_1', 'performance_1', 'exam_1', 'grade_1', 'quiz_2', 'performance_2', 'exam_2', 'grade_2', 'quiz_3', 'performance_3', 'exam_3', 'grade_3')
+	readonly_fields = ('grade_1','grade_2','grade_3')
 	
 class profAdmin(admin.ModelAdmin):
 	list_display = ('prof_fname', 'prof_mname', 'prof_lname')
