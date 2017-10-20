@@ -5,11 +5,30 @@ from django.shortcuts import render
 from django.views.generic import DetailView,View,ListView
 from django.views import generic
 from .forms import StudentForm
-from .models import student, subject, professor
+from .models import student, subject, professor,Course
 
 # Create your views here.
 
 
+class bscslistview(generic.ListView):
+	def get(self, request): 
+		queryset = Course.objects.filter(course_name__iexact ='BSCS')
+		courses = Course.objects.all()
+		context = {
+			'courses':courses,
+		
+		}
+		return render(request, "bscs.html", context)
+		
+class studentlist(generic.ListView):
+	def get(self, request): 
+		students = student.objects.all()
+		context = {
+			'students':students,
+		
+		}
+		return render(request, "student_info.html", context)
+		
 
 def index(request):
 		queryset = student.objects.filter(Last_name__icontains='cabilangan')[:5]
@@ -20,7 +39,7 @@ def index(request):
 		}
 		return render(request, "student_list.html", context)
 		
-		
+
 class Student(View):
 	def get(self, request):
 		students = student.objects.all()

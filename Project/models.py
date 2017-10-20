@@ -126,6 +126,8 @@ ATTENDANCE_PRONOUNS = {
     'late': 'to',
     '': '',
 }
+class StudentAttendance(models.Model):
+	studen_name 	= models.CharField('AttendanceRecord',max_length=150 )
 
 class AttendanceRecord(models.Model):
     meeting 		= models.DateField(null=True, blank=True)

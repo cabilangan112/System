@@ -5,12 +5,12 @@
 	<form method="post" >
 		{% csrf_token %}
 		{{ form.as_p}}
-		<input type="submit" value="Add Student">
+		<input type="submit" value="Add Student"><span></span>	  <h2><a href="{% url 'index' %}">Student Grade<a></h2>
 	</form>
 		
    
 	
-	  <h2><a href="{% url 'index' %}">Courses<a></h2>
+
 	  
 
 	  

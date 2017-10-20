@@ -1,0 +1,31 @@
+
+{% extends "base_generic.html" %}
+{% block content %}
+
+    <h1>Students Information</h1>
+  <br></br>
+    <br></br>
+    {% if students %}
+    <ul>
+
+      {% for students in students %}
+      <li>
+	     
+{{students.Last_name}} {{students.First_name}} {{students.course}}  
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+      <p>There are no books in the library.</p>
+    {% endif %}       
+
+
+      {% for sub in sub %}
+
+
+	{{sub.subject_name}}
+
+	      {% endfor %}
+		  {% endblock %}
+  </div>
+
